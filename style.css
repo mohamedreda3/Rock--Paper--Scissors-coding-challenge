@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tajawal:wght@200;300;400;500;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --bg: rgba(137, 43, 226, 0.429);
+    --common-color-1: #1f1f38;
+    --active-transition: 0.4s ease-in-out;
+    --common-color-2: #45a4da;
+    --common-color-3: #292a63;
+    --glassmorphism-color: #45a3da50;
+    --text-color-1: rgb(255 255 255 / 43%);
+    --text-color-2: #98c6ef;
+    --text-color-3: rgb(128 128 128 / 76%);
+    --common-color-4: #695ee5;
+    --common-color-5: #2b305e;
+    --common-color-6: #f95849;
+    --common-color-7: #272c55;
+    --common-color-8: #00bd8d;
+    --common-color-9: #f5c855;
+    --common-color-10: #414888;
+    --text-color-4: rgb(171 160 160);
+    --text-color-5: rgba(255, 255, 255, 0.679);
+    --common-border-1: 0.1px solid transparent;
+    --common-border-2: 2px solid transparent;
+    --common-border-3: 1px solid transparent;
+
+    /* 
+       #f4f4f4
+       #616fa9
+       #7a7c7c
+       rgba(255, 255, 255, 0.732)
+       rgba(255, 255, 255, 0.679)
+    */
+}
+
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    position: relative;
+    text-decoration: none;
+    flex-wrap: wrap;
+}
+
+a,
+span {
+    display: inline-block;
+}
+
+body {
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    width: min(700px, 100%);
+    min-height: 37vh;
+    margin: 10vh auto;
+    gap: 10px;
+}
+
+
+button.rules {
+    left: 95%;
+    translate: -100%;
+    width: 150px;
+    padding: 8px 19px;
+    font-size: 21px;
+    background: none;
+    color: white;
+    border: 0.1px solid;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--active-transition);
+    margin: 30px 0;
+}
+
+button.rules:hover {
+    background: hsl(189, 59%, 53%);
+    border-color: transparent;
+    border-radius: 4px;
+}
+
+
+.score>div {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    padding: 3px 6px;
+}
+
+.score {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 8px;
+    gap: 8px;
+}
+
+
+.score>div:not(:first-child) {
+    align-items: center;
+    width: 115px;
+    height: 115px;
+    justify-content: center;
+    border-radius: 4px;
+    border: 0.1px solid rgba(128, 128, 128, 0.378);
+    border-radius: 9px;
+    background: white;
+    color: black;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.score span {
+    display: block;
+}
+
+.score .logo {
+    font-size: 25px;
+}
+
+
+span#points,
+#nog {
+    font-size: 22px;
+    color: #0076ff;
+    font-weight: 800;
+}
+
+.choices {
+    width: 250px;
+    height: 241px;
+    margin: 10px auto;
+    background: url(./bg-triangle.svg) no-repeat center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.all-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.choices p {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 15px solid;
+    border-radius: 100px;
+    background: white;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: var(--active-transition);
+}
+
+.choices p img {
+    width: 60px;
+    padding: 10px;
+    margin: auto;
+}
+
+.score-points p {
+    margin: 0;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+}
+
+.choices p:nth-child(1), .result-choices img[src="icon-paper.svg"] {
+    border-color: #4865f4 !important;
+}
+
+.choices p:nth-child(2), .result-choices img[src="icon-scissors.svg"] {
+    border-color: #ec9e0e !important;
+}
+
+.choices p:nth-child(3), .result-choices img[src="icon-rock.svg"] {
+    border-color: #dc2e4e !important;
+}
+
+
+.choices p:nth-child(1):hover {
+    background-color: #4865f4;
+
+}
+
+.choices p:nth-child(2):hover {
+    background-color: #ec9e0e;
+
+}
+
+.choices p:nth-child(3):hover {
+    background-color: #dc2e4e;
+
+}
+
+.rules-img div p.close-rules {
+    cursor: pointer;
+    font-size: 33px;
+}
+
+.rules-img div p {
+    margin: 0;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+}
+
+.rules-img div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.rules-img img {
+    width: 250px;
+}
+
+.rules-img {
+    width: min(322px, 100%);
+    border-radius: 7px;
+    min-height: 150px;
+    padding: 10px;
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    top: 220%;
+    opacity: 0;
+    z-index: -1;
+    transition: var(--active-transition);
+}
+
+.rules-img.active {
+    top: 50%;
+    opacity: 1;
+    z-index: 99;
+    box-shadow: 1px 1px 15px -1px rgba(128, 128, 128, 0.379);
+}
+
+button {
+    outline: none;
+}
+
+.result-choices .result-win button {
+    width: 135px;
+    padding: 6px 14px;
+    font-size: 19px;
+    cursor: pointer;
+    background: white;
+}
+
+.result-choices .result-win h3 {
+    font-size: 23px;
+}
+
+.result-choices img {
+    width: 120px;
+    height: 120px;
+    padding: 7px;
+    border: 15px solid;
+    background: white;
+    border-radius: 120px;
+}
+
+.result-choices>div:not(:nth-child(2)) {
+    gap: 17px;
+}
+
+.result-choices>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-choices h3 {
+    color: white;
+    margin: 0;
+    font-size: 21px;
+}
+
+.result-choices {
+    display: flex;
+    justify-content: space-around;
+    margin: 35px 0 0;
+    gap: 11px;
+}
